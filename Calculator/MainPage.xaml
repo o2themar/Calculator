@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Calculator" 
-             x:Class="Calculator.MainPage">
+             x:Class="Calculator.MainPage"
+             BackgroundColor="#404040">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="plainButton" TargetType="Button">
@@ -41,46 +42,46 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Text="0" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="White"
+            <Label x:Name="display" Text="0" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="White"
         FontSize="60" Grid.ColumnSpan="4" />
             <Button Text = "C" Grid.Row="1" Grid.Column="0"
-        Style="{StaticResource darkerButton}" />
+        Style="{StaticResource darkerButton}" Pressed="Clear"/>
             <Button Text = "+/-" Grid.Row="1" Grid.Column="1"
-        Style="{StaticResource darkerButton}" />
+        Style="{StaticResource darkerButton}" Pressed="Negation"/>
             <Button Text = "%" Grid.Row="1" Grid.Column="2"
-        Style="{StaticResource darkerButton}" />
+        Style="{StaticResource darkerButton}" Pressed="Modulus"/>
             <Button Text = "÷" Grid.Row="1" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
+        Style="{StaticResource orangeButton}" Pressed="Divide"/>
             <Button Text = "7" Grid.Row="2" Grid.Column="0"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Seven"/>
             <Button Text = "8" Grid.Row="2" Grid.Column="1"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Eight"/>
             <Button Text = "9" Grid.Row="2" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Nine"/>
             <Button Text = "x" Grid.Row="2" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
+        Style="{StaticResource orangeButton}" Pressed="Multiplication"/>
             <Button Text = "4" Grid.Row="3" Grid.Column="0"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Four"/>
             <Button Text = "5" Grid.Row="3" Grid.Column="1"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Five"/>
             <Button Text = "6" Grid.Row="3" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Six"/>
             <Button Text = "-" Grid.Row="3" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
+        Style="{StaticResource orangeButton}" Pressed="Subtraction"/>
             <Button Text = "1" Grid.Row="4" Grid.Column="0"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="One"/>
             <Button Text = "2" Grid.Row="4" Grid.Column="1"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Two"/>
             <Button Text = "3" Grid.Row="4" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Three"/>
             <Button Text = "+" Grid.Row="4" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
+        Style="{StaticResource orangeButton}" Pressed="Addition"/>
             <Button Text = "0" Grid.ColumnSpan="2"
-        Grid.Row="5" Grid.Column="0" Style="{StaticResource plainButton}" />
+        Grid.Row="5" Grid.Column="0" Style="{StaticResource plainButton}" Pressed="Zero"/>
             <Button Text = "." Grid.Row="5" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
+        Style="{StaticResource plainButton}" Pressed="Period"/>
             <Button Text = "=" Grid.Row="5" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
+        Style="{StaticResource orangeButton}" Pressed="Equal"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
