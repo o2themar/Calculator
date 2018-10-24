@@ -26,10 +26,9 @@ namespace Calculator.UITests
         }
 
         [Test]
-        public void WelcomeTextIsDisplayed()
+        public void ValueDisplayedAfterKeyPress()
         {
             AppResult[] results = app.WaitForElement(c => c.Marked("0"));
-            app.Screenshot("Welcome screen.");
 
             Assert.IsTrue(results.Any());
         }
