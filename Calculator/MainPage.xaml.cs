@@ -48,7 +48,7 @@ namespace Calculator
             // If valid expression calculate
             if (validationResult.isValid)
             {
-                float result = CalculateResult(validationResult);
+                Decimal result = CalculateResult(validationResult);
                 DisplayAlert("Result: " + result, "Valid", "Close");
             }
             else 
@@ -58,19 +58,19 @@ namespace Calculator
             }
         }
 
-        private float CalculateResult(ExpressionValidationResult validationResult)
+        private Decimal CalculateResult(ExpressionValidationResult validationResult)
         {
-            float[] numbers = validationResult.numbers;
+            Decimal[] numbers = validationResult.numbers;
             List<char> operators = validationResult.operators;
 
-            float num1 = numbers[0];
-            float num2 = numbers[1];
-            float num3;
+            Decimal num1 = numbers[0];
+            Decimal num2 = numbers[1];
+            Decimal num3;
 
             char operator1 = operators.ElementAt(0);
             char operator2;
 
-            float result = 0;
+            Decimal result = 0;
             if (numbers.Length > 2) { 
                 for (int i = 2; i < numbers.Length; i++)
                 {
@@ -99,7 +99,7 @@ namespace Calculator
             return result;
         }
 
-        private float CalculateExpression(float num1, float num2, char op)
+        private Decimal CalculateExpression(Decimal num1, Decimal num2, char op)
         {
             switch(op) 
             {
@@ -154,7 +154,7 @@ namespace Calculator
             for (int i = 0; i < numbers.Length; i++)
             {
                 string number = numbers[i];
-                if (!float.TryParse(number, out float parsedResult))
+                if (!Decimal.TryParse(number, out Decimal parsedResult))
                 {
                     isValidNumbers = false;
                     break;
@@ -164,15 +164,15 @@ namespace Calculator
             return isValidNumbers && numbers.Length > 1;
         }
 
-        private float[] ConvertNumbersToFloat(string[] numbers)
+        private Decimal[] ConvertNumbersToFloat(string[] numbers)
         {
-            float[] convertedNumbers = new float[numbers.Length];
+            Decimal[] convertedNumbers = new Decimal[numbers.Length];
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                float parsedResult;
+                Decimal parsedResult;
                 string number = numbers[i];
-                if (float.TryParse(number, out parsedResult))
+                if (Decimal.TryParse(number, out parsedResult))
                 {
                     convertedNumbers[i] = parsedResult;
                 }
@@ -183,10 +183,10 @@ namespace Calculator
 
         struct ExpressionValidationResult {
             public Boolean isValid;
-            public float[] numbers;
+            public Decimal[] numbers;
             public List<char> operators;
 
-            public ExpressionValidationResult(Boolean isValid, float[] numbers, List<char> operators) 
+            public ExpressionValidationResult(Boolean isValid, Decimal[] numbers, List<char> operators) 
             {
                 this.isValid = isValid;
                 this.numbers = numbers;
